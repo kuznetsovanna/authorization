@@ -1,0 +1,63 @@
+body {
+    background: url(assets/background.jpg); /*задаем фон нашей страницы*/
+  }
+  .form { /*обращаемся к классу форма, выравниваем,задаем цвет заднего плана и прозрачность*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(51, 170, 51, 0.1);
+  }
+  .form h1 { /*так же обращаемся к классу форм,но уже к конкретно к заголовку. задаем границы,отступы,цвет,размер шрифта,верхний регистр*/
+    margin: 30px 100px;
+    padding: 0;
+    text-align: center;
+    color: #030303;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  
+  .info-form { /*теперь обращаемся к классу info-form,т.е. конкретно к полям и кнопке. задаем параметры границы,положение текста*/
+    margin: 15px 45px;
+    text-align: center;
+  }
+  .info-form input {/* задаем параметры поля ввода. положение,размер и цвет текста,отступы,задний фон,границы*/
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    color: #0c0c0c;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+  }
+  
+  .info-form input[type="email"]:focus, .info-form input[type="password"]:focus {
+    /*для полей "логин" и "пароль" создаем голубую рамку, которая будет появляться только при нажатии на соответствующее поле*/
+    outline: none; /*при тестировании в google chrome, появлялась автоматически черная рамка,перекрывающая мою голубую. 
+                     В браузере IE такого бага не обнаружино. Обратилась за помощью в интернет,нашла такое решение) */
+    border: 1px solid rgba(81, 203, 238, 1);
+  }
+  
+  /* часы*/
+  .clockpage
+  {
+    background-color: #404040;
+    margin: auto;
+    max-width: 500px;
+    min-width: 100px;
+    background: white;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 32px;
+    padding: 10px;
+    font-weight: bold;
+    border-top: 10px solid #55c49f;
+    margin-top: 100px;
+  }
+  
+  #clock
+  {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+  }
