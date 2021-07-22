@@ -40,7 +40,7 @@ function validate() {
     } else if (textPass.search(/[0-9]/) === -1) {
         setErrorPassword('Пароль должен содержать цифры');
         result = false;
-    } else if (textPass.search(/[!@#$%^&*()_+"№;%:?\]]/) === -1) {
+    } else if (textPass.search(/[!@#$%^&*()_+"№;:?\]]/) === -1) {
         setErrorPassword('Пароль должен содержать спец.символы');
         result = false;
     } else {
@@ -72,7 +72,7 @@ function clockTimer() {
         time[2] = "0" + time[2];
     }
 
-    let current_time = time.join(":");
+    let currentTime = time.join(":");
 
     // день
     let dd = date.getDate().toString();
@@ -90,11 +90,11 @@ function clockTimer() {
     let w = getWeekDay(date);
 
     // дата и день недели
-    let current_date = dd + '.' + mm + '.' + yyyy + ' ' + w + ' ';
+    let currentDate = dd + '.' + mm + '.' + yyyy + ' ' + w + ' ';
 
     let clock = document.getElementById("clock");
 
-    clock.innerHTML = current_date + current_time;
+    clock.innerHTML = currentDate + currentTime;
 
     setTimeout("clockTimer()", 1000);
 }
