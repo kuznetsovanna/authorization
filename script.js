@@ -1,5 +1,7 @@
 
-
+ function Data () {
+   // дата и время
+   var data = new data(2021,6,22,10,42,10)
   function setErrorFor(input, message) {
     var err = document.getElementById("erreml");
     err.innerHTML = message; 
