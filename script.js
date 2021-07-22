@@ -35,7 +35,7 @@ function validate() {
     // проверка пароля
     if (textPass.length === 0) {
         SetErrorPassword('Введите пароль');
-        return false;
+        result = false;
     } else if (textPass.length < 6) {
         SetErrorPassword('Пароль должен быть минимум 6 символов');
         result = false;
