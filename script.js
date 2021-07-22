@@ -53,7 +53,8 @@ function validate() {
 function getWeekDay(date) {
     let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
 
-    return days[date.getDay()];}
+    return days[date.getDay()];
+}
     // часы
     function clockTimer() {
         let date = new Date();
@@ -97,9 +98,8 @@ function getWeekDay(date) {
     }
 
     setTimeout("clockTimer()", 10);
-    document.write
 
-function get_name_browser(){
+function getNameBrowser(){
     var ua = navigator.userAgent;
 
 
