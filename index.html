@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='UTF-8'>    
-    <script type="text/javascript" src="script.js"></script> <!--обращаемся к файлу JS,где прописаны скрипты валидации и часы-->   
-    <link rel="stylesheet" type="text/css" href="style.css" /> <!--здесь мы обращаемся в файлу style.css, в котором прописано оформление нашей странички-->
-   </head>
-    <body>
-      <div class="form"> <!--создаем класс форма, который будет состоять из заголовка "авторизация" , двумя полями "логин" и "пароль" с соответствующими типами и кнопкой "вход"-->
-        <h1>авторизация</h1> <!--заголовок-->
-        <div class="info-form">
-          <input type="email" name="email" placeholder="логин" /> <!--поле "логин"-->
-          <span id="erreml"></span>
-        </div>
-        <div class="info-form">
-          <input type="password"  name="password" placeholder="пароль" /> <!--поле "пароль"-->
-          <span id="errpwd"></span> 
-          <small></small>
-        </div>
-        <div class="info-form">
-          <button type="submit" onclick="validate()" > вход </button> <!--кнопка вход-->      
-        </div>
-        <div class="clockpage">    
-          <span id="clock"></span>         
-        </div>        
-      </div>
-    </body>
-  
+<head>
+    <meta charset='UTF-8'>
+    <script type="text/javascript" src="script.js"></script>
+    <!--обращаемся к файлу JS,где прописаны скрипты валидации и часы-->
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!--здесь мы обращаемся в файлу style.css, в котором прописано оформление нашей странички-->
+</head>
+<body>
+<div class="form">
+    <!--создаем класс форма, который будет состоять из заголовка "авторизация" , двумя полями "логин" и "пароль" с соответствующими типами и кнопкой "вход"-->
+    <h1>авторизация</h1> <!--заголовок-->
+    <div class="info-form">
+        <input type="email" name="email" placeholder="логин"/> <!--поле "логин"-->
+        <span id="erreml"></span>
+    </div>
+    <div class="info-form">
+        <input type="password" name="password" placeholder="пароль"/> <!--поле "пароль"-->
+        <span id="errpwd"></span>
+        <small></small>
+    </div>
+    <div class="info-form">
+        <button type="submit" onclick="validate()"> вход</button> <!--кнопка вход-->
+    </div>
+    <div class="clockpage">
+        <span id="clock"></span>
+    </div>
+</div>
+</body>
 </html>
