@@ -14,37 +14,45 @@ function SetErrorPassword(message) {
 }
 
 function validate() {
+    let result = true;
+
+    // получение значений полей
+    let email = document.querySelector('input[name="email"]').value;
+    let textPass = document.querySelector('input[name="password"]').value;
+
     // проверка email
-    var email = document.querySelector('input[name="email"]').value;
-    var textPass = document.querySelector('input[name="password"]').value;
-    var email_regexp = /[0-9a-z_A-Z]+@[0-9a-z_A-Z^.]+\.[a-zа-яА-ЯA-Z]{2,4}/i;
-    if (!email_regexp.test(email)) {
-
-        setErrorEmail(email, 'проверьте email')
+    let email_regexp = /[0-9a-z_A-Z]+@[0-9a-z_A-Z^.]+\.[a-zа-яА-ЯA-Z]{2,4}/i;
+    if (email.length === 0) {
+        setErrorEmail('Введите email');
+        result = false;
+    } else if (!email_regexp.test(email)) {
+        setErrorEmail('Email должен соответствовать формату example@domain.com')
+        result = false;
     } else {
-        setErrorEmail(' ');
-
+        setErrorEmail('');
     }
 
     // проверка пароля
-    if (textPass.length < 6) {
-        SetErrorPassword(" Слишком короткий пароль");
+    if (textPass.length === 0) {
+        SetErrorPassword('Введите пароль');
         return false;
-    }
-    if (textPass.search(/[a-zA-Z]/) === -1) {
-        SetErrorPassword("пароль должен содержать буквы разных регистров");
-        return false;
+    } else if (textPass.length < 6) {
+        SetErrorPassword('Пароль должен быть минимум 6 символов');
+        result = false;
+    } else if (textPass.search(/[a-zA-Z]/) === -1) {
+        SetErrorPassword('Пароль должен содержать буквы разных регистров');
+        result = false;
+    } else if (textPass.search(/[0-9]/) === -1) {
+        SetErrorPassword('Пароль должен содержать цифры');
+        result = false;
+    } else if (textPass.search(/[!@#$%^&*()_+"№;%:?\]]/) === -1) {
+        SetErrorPassword('Пароль должен содержать спец.символы');
+        result = false;
+    } else {
+        SetErrorPassword('');
     }
 
-    if (textPass.search(/[0-9]/) === -1) {
-        SetErrorPassword("пароль должен содержать цифры");
-        return false;
-    }
-    if (textPass.search(/[!@#$%^&*()_+"№;%:?\]]/) === -1) {
-        SetErrorPassword("пароль должен содержать спец.символы");
-        return false;
-    }
-    return true;
+    return result;
 }
 // день недели
 function getWeekDay(date) {
@@ -84,7 +92,7 @@ function getWeekDay(date) {
         let w = getWeekDay(date);
 
         // дата и день недели
-        let current_date = `${dd}.${mm}.${yyyy} ${w} `;
+        let current_date = dd+'.'+mm+'.'+yyyy+' '+w+' ';
 
         let clock = document.getElementById("clock");
 
