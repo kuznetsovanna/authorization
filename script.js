@@ -1,8 +1,3 @@
-
-
-
-
-
 function setErrorEmail(message) {
     var err = document.getElementById("erreml");
     err.innerHTML = message;
